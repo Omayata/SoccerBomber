@@ -9,7 +9,7 @@ FONT_FILENAME = "Minecraft.ttf"
 _loaded_font_path = None
 _platform = sys.platform
 
-#test
+#test น้องนุ
 
 # ================= Windows =================
 def _load_windows(font_path):

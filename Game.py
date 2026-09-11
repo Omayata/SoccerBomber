@@ -830,40 +830,34 @@ def reset_positions(conceded_player=None):
 def show_winner_and_options(text, color):
     stop_all_sound()
     play_sound("win")
-    winner_bg = turtle.Turtle()
-    winner_bg.hideturtle()
-    winner_bg.penup()
-    winner_bg.color("white")
-    winner_bg.goto(-350, 120)
-    winner_bg.begin_fill()
+    
+    menu_pen.penup()
+    menu_pen.color(color, "white") 
+    menu_pen.goto(-350, 120)
+    menu_pen.pensize(8)
+    menu_pen.pendown()
+    menu_pen.begin_fill()
     for _ in range(2):
-        winner_bg.forward(700)
-        winner_bg.right(90)
-        winner_bg.forward(280)
-        winner_bg.right(90)
-    winner_bg.end_fill()
-    winner_frame = turtle.Turtle()
-    winner_frame.hideturtle()
-    winner_frame.penup()
-    winner_frame.color(color)
-    winner_frame.pensize(8)
-    winner_frame.goto(-350, 120)
-    winner_frame.pendown()
-    for _ in range(2):
-        winner_frame.forward(700)
-        winner_frame.right(90)
-        winner_frame.forward(280)
-        winner_frame.right(90)
-    winner_frame.penup()
+        menu_pen.forward(700)
+        menu_pen.right(90)
+        menu_pen.forward(280)
+        menu_pen.right(90)
+    menu_pen.end_fill()
+    menu_pen.penup()
+    # ---------------------------------------------------------
+
     score_pen.goto(0, 45)
     score_pen.color(color)
     score_pen.write(text, align="center", font=("Minecraft", 36, "bold"))
+    
     menu_pen.goto(0, -25)
     menu_pen.color("green")
     menu_pen.write("PRESS [ENTER] TO PLAY AGAIN", align="center", font=("Minecraft", 18, "bold"))
+    
     menu_pen.goto(0, -65)
     menu_pen.color("red")
     menu_pen.write("PRESS [Q] TO QUIT GAME", align="center", font=("Minecraft", 18, "bold"))
+    
     screen.update()
 
 def reset_entire_game():
